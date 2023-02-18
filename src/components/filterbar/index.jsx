@@ -21,7 +21,10 @@ export default function FilterBar({ brands, selectedBrand, onBrandChange, onQuer
                 <Dropdown label={selectedBrand}>
                     {
                         brands.map(brand =>
-                            <DropdownItem onClick={ev=>onBrandChange(brand)} key={brand}>{brand}
+                            <DropdownItem onClick={ev=>{
+                                onBrandChange(brand)
+                                setQuery("")
+                            }} key={brand}>{brand}
                             </DropdownItem>
                         )
                     }
@@ -30,6 +33,7 @@ export default function FilterBar({ brands, selectedBrand, onBrandChange, onQuer
             <div className='flex w-3/4 justify-center items-center'>
                 <TextInput
                     data-testid={"product-search"}
+                    value={query}
                     onChange={(ev)=>setQuery(ev.target.value)}
                     className='mr-5 w-full'
                     type={"text"}

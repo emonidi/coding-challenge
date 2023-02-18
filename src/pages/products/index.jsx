@@ -49,7 +49,7 @@ export default function Products() {
                         onQueryChange={(query)=> filterProducts(query)}    
                     />
                     <div className="mt-20">
-                        <ProductList productList={productList}></ProductList>
+                        <ProductList productList={productList} isLoading={isLoading}></ProductList>
                     </div>
                 </> : 
                 <div data-testid="loading" className="w-full flex h-60 flex items-center justify-center">
