@@ -15,13 +15,13 @@ export default function ProductList({ productList, isLoading }) {
             No products to be displayed.
           </h3>
         </Alert> :
-         <div data-testid="product-list" className="grid grid-cols-3 gap-4 product-list m-auto" >
+         <div data-testid="product-list" className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 product-list m-auto" >
 
          {
            productList.map(product =>
-             <div className="max-w" key={product.id}>
+             <div  key={product.id}>
                <Card
-                 className="h-80"
+                 className="md:h-80"
                  horizontal={true}
                  imgAlt="product.name"
                  imgSrc={product.api_featured_image}

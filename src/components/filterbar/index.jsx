@@ -15,8 +15,8 @@ export default function FilterBar({ brands, selectedBrand, onBrandChange, onQuer
     },[query])
 
     return (
-        <div data-testid="filterbar" className="flex justify-around mt-10  border p-4 rounded max-w">
-            <div className="flex w-1/4 items-center">
+        <div data-testid="filterbar" className="flex flex-col sm:flex-row md:flex-row justify-around mt-10  border p-4 rounded max-w">
+            <div className="flex md:w-1/2 w-full items-center">
                 <Label className='mr-4'>Brands:</Label>
                 <Dropdown label={selectedBrand}>
                     {
@@ -30,7 +30,7 @@ export default function FilterBar({ brands, selectedBrand, onBrandChange, onQuer
                     }
                 </Dropdown>
             </div>
-            <div className='flex w-3/4 justify-center items-center'>
+            <div className='flex sm:w-1/2 sm:mt-0 mt-5 justify-center items-center'>
                 <TextInput
                     data-testid={"product-search"}
                     value={query}
