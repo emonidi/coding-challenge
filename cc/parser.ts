@@ -21,6 +21,19 @@ Bullet list:
 // split by EMPTY lines
 const split: string[] = example.split(/\n\s*\n/);
 
+/** Becomes quite easy to figure out what is heading and what is paragraph
+ *
+    [
+      '# Heading',
+      '## Sub-heading',
+      'Paragraphs are separated\nby a blank line.',
+      'Two spaces at the end of a line  \nproduces a line break.',
+      'Text attributes _italic_, \n**bold**, `monospace`.',
+      'Bullet list:',
+      '  * apples\n  * oranges\n  * pears'
+    ]
+ */
+
 const isHeading = (line: string): boolean => {
   return line.trim().indexOf("#") === 0;
 }
